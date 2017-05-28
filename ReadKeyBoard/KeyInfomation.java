@@ -6,7 +6,7 @@ import java.awt.event.*;
 /// <summary>
 /// キー情報の管理クラス
 /// </summary>
-public class KeyInformation extends Applet{
+public class KeyInformation extends Applet {
     private String   _TxStr;
     private float    _width;
     private float    _height;
@@ -36,24 +36,24 @@ public class KeyInformation extends Applet{
     /// paint()
     /// Argument : Graphics g
     /// </summary>
-    public void paint(Graphics g) {
+    public void paint( Graphics g ) {
         Initialize( );
-		g.drawString( _TxStr , (width / 2) - (_f.stringWidth(_TxStr)) / 2 , (height / 2) );
+	g.drawString( _TxStr , (width / 2) - (_f.stringWidth(_TxStr)) / 2 , (height / 2) );
     }
     
     /// <summary>
     /// Initalize( )
     /// Argument : Nothing
     /// </summary>
-    public void Initialize(){
+    public void Initialize() {
         try {
-            addKeyListener(
+            addKeyListener (
                 new KeyAdapter() {
-			        public void keyPressed(final KeyEvent e){
-                         _TxStr = e.getKeyText(e.getKeyCode());
+		    public void keyPressed(final KeyEvent e) {
+                         _TxStr = e.getKeyText( e.getKeyCode() );
                         repaint();
-			        }
-		        }
+		    }
+		}
             );
             System.out.println( "String is : " + this._TxStr );
         } 
